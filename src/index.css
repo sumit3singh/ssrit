@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+    overflow-x: hidden;
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #0b192c;
+    color: #f8fafc;
+    width: 100%;
+    overflow-x: hidden;
+    @apply antialiased font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    color: #f8fafc;
+  }
+}
+
+/* Custom Scroll Offset Utility */
+.scroll-mt-section {
+  scroll-margin-top: 110px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b192c;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b4c7e;
+}
+
+/* Softened Eye-Comfortable Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Aesthetic Eye-Comfortable Glassmorphism Card Style */
+.glass-card {
+  background: rgba(19, 37, 62, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  background: rgba(26, 48, 79, 0.95);
+  border-color: rgba(52, 211, 153, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 16px 40px -10px rgba(52, 211, 153, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Radiant Display Text Gradients */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 40%, #a3e635 75%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Floating Marquee Animation for Certificates */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
